@@ -70,4 +70,24 @@ plt.clf()
 plt.hist(list(good['Speed']),bins=50)
 plt.title('Distribution of Speed')
 plt.xlabel('Speed')
+# plt.show()
+plt.clf()
+
+antman_skills = good[good['Name']=='Ant-Man']
+ic(antman_skills.head())
+
+labels = list(antman_skills.columns.values)[2:8]
+ic(labels)
+
+ant_values = list(antman_skills.values[0][2:8])
+ic(ant_values)
+plt.pie(ant_values , labels = labels)
+# plt.show()
+plt.clf()
+
+#Assignment
+bad_stats = characters[characters['Alignment']=='bad']
+labels = list(bad_stats.columns.values)[2:8]
+bad_values = list(bad_stats.values[0][2:8])
+plt.pie(bad_values , labels = labels)
 plt.show()
